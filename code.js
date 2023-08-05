@@ -54,7 +54,7 @@ function getData() {
     } else {
       var addUser = followers[Numbersend + NumStart];
       window.jQuery.ajax({
-        url: 'https://scratch.mit.edu/site-api/users/curators-in/' + StudioNum + '/invite_curator/?usernames=' + addUser,
+        url: 'https://scratch.mit.edu/site-api/users/curators-in/' + ProjectNum + '/invite_curator/?usernames=' + addUser,
         Connection: close,
         type: 'PUT',
         headers: {
@@ -92,11 +92,11 @@ function getData() {
 
 
 
-var StudioNum = location.pathname;
-StudioNum = StudioNum.slice(9, 17);
-if (parseInt(StudioNum)) {
+var ProjectNum = location.pathname;
+ProjectNum = ProjectNum.slice(9, 17);
+if (parseInt(ProjectNum)) {
   document.body.innerHTML = "<div id='console' style='color:#fff;font-family: Arial;'></div>";
   getData();
 } else {
-  alert('Please Run This Script In The Studio That You Want To Send Your Invites In.');
+  alert('Please Run This Script In The Project That You Want To Add to Studios.');
 }
